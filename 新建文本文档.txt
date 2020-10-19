@@ -1,0 +1,60 @@
+1． Variable-step可变步长类型算法
+   （1）ode45
+
+适用于仿真线性化程度高的系统。此类线性系统模型主要由Transfer Function、State-Space、Zero-Pole、Gain等标准功能模块组成。
+
+（2）ode23
+
+Bogacki和Shampine结合地低阶算法，用于解决非刚性问题，在允许误差方面以及使用在stiffness mode（稍带刚性）问题方面，比ode45效率高。
+
+（3）ode23s
+
+改进的Rosenbrock二阶算法，在允许误差比较大的条件下，ode23s比ode15s更有效。所以在使用ode15s处理效果比较差的情况下，宜选用ode23s来解决问题。
+
+（4）ode113
+
+Adams算法，用于解决非刚性问题，在允许误差要求严格的情况下，比ode45算法更有效。
+
+（5）ode15s
+
+NDFs算法，用于解决刚性（stiff）问题。当ode45、ode113无法解决问题时，可试用ode15s去求解，但算法运算精度低。
+
+（6）ode23t
+
+这种算法是采用自由内插法实现的梯形法，适用于解决系统有适度刚性并要求无数值衰减的问题。
+
+（7）ode23tb
+
+属于TR-BDF2算法，适合于求解刚性问题，对于求解允许误差比较宽的问题效果较好。
+
+（8）discrete
+
+用于处理非连续状态的系统模型。
+
+ 
+
+2． Fix-step固定步长类型算法
+
+（1）      ode5
+
+Dormand Prince算法，定步长下的ode45算法。
+
+（2）      ode4
+
+四阶Runge-Kutta算法。
+
+（3）      ode3
+
+Bogacki-Shampine算法，定步长下的ode23算法。
+
+（4）      ode2
+
+Heuns法则
+
+（5）      ode1
+
+Euler法则
+
+（6）      discrete（fixed-step）
+
+不含积分运算的定步长方法，适用于求解非连续状态的系统模型问题。
